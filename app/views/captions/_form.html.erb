@@ -1,0 +1,29 @@
+<%= form_for(@caption) do |f| %>
+  <% if @caption.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@caption.errors.count, "error") %> prohibited this caption from being saved:</h2>
+
+      <ul>
+      <% @caption.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :sentence %><br>
+    <%= f.text_field :sentence %>
+  </div>
+  <div class="field">
+    <%= f.label :meme_id %><br>
+    <%= f.select :meme_id, options_from_collection_for_select(Meme.all, "id", "name") %>
+  </div>
+  <div class="field">
+    <%= f.label :picture %><br>
+    <%= f.text_field :picture %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sentence:</strong>
+  <%= @caption.sentence %>
+</p>
+
+<p>
+  <strong>Meme:</strong>
+  <%= @caption.meme_id %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= image_tag(@caption.picture_url, width: 600) if @caption.picture.present? %>
+</p>
+
+<%= link_to 'Edit', edit_caption_path(@caption) %> |
+<%= link_to 'Back', captions_path %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @meme.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @meme.description %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= image_tag(@meme.picture_url, width: 600) if @meme.picture.present? %>
+</p>
+
+<%= link_to 'Edit', edit_meme_path(@meme) %> |
+<%= link_to 'Back', memes_path %>

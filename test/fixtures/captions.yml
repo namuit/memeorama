@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  sentence: MyString
+  meme_id: 1
+  picture: MyString
+
+two:
+  sentence: MyString
+  meme_id: 1
+  picture: MyString

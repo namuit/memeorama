@@ -1,0 +1,31 @@
+<h1>Listing captions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sentence</th>
+      <th>Meme</th>
+      <th>Picture</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @captions.each do |caption| %>
+      <tr>
+        <td><%= caption.sentence %></td>
+        <td><%= caption.meme_id %></td>
+        <td><%= image_tag(caption.picture_url, width: 200) if caption.picture.present? %></td>
+        <td><%= link_to 'Show', caption %></td>
+        <td><%= link_to 'Edit', edit_caption_path(caption) %></td>
+        <td><%= link_to 'Destroy', caption, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Caption', new_caption_path %>

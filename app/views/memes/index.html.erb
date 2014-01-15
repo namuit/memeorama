@@ -1,0 +1,31 @@
+<h1>Listing memes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Picture</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @memes.each do |meme| %>
+      <tr>
+        <td><%= meme.name %></td>
+        <td><%= meme.description %></td>
+        <td><%= image_tag(meme.picture_url, width: 200) if meme.picture.present? %></td>
+        <td><%= link_to 'Show', meme %></td>
+        <td><%= link_to 'Edit', edit_meme_path(meme) %></td>
+        <td><%= link_to 'Destroy', meme, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Meme', new_meme_path %>
